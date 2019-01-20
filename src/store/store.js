@@ -5,6 +5,7 @@ import showingAppsReducer from '../showingApps/showingAppsReducers';
 import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import { middleware as reduxPackMiddleware } from 'redux-pack';
+import api from '../connection/api';
 
 const languages = [
   "Kannada",
@@ -38,7 +39,7 @@ const combinedStore = combineReducers({
   userData: showingAppsReducer
 });
 
-const store = createStore(combinedStore, applyMiddleware(thunk, reduxPackMiddleware, logger));
+const store = createStore(combinedStore, applyMiddleware(thunk.withExtraArgument(api), reduxPackMiddleware, logger));
 
 console.log(store.getState());
 

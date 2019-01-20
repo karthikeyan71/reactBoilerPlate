@@ -6,3 +6,4 @@
 6. installing prop-types
 7. adding the redux thunk applyMiddleware
 8. installing redux-logger
+9. adding the redux-logger and redux-thunk and redux-pack as store middleware
