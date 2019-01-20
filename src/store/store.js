@@ -2,7 +2,9 @@ import React from 'react';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import applicationData from './applicationData';
 import showingAppsReducer from '../showingApps/showingAppsReducers';
-import ReduxThunk from 'redux-thunk';
+import thunk from 'redux-thunk';
+import { createLogger } from 'redux-logger';
+import { middleware as reduxPackMiddleware } from 'redux-pack';
 
 const languages = [
   "Kannada",
@@ -23,6 +25,8 @@ const languages = [
   "Ladakhi"
 ];
 
+const logger = createLogger();
+
 const initialData = { application: applicationData, languages :languages };
 
 const data = (state = initialData, action) => {
@@ -34,7 +38,7 @@ const combinedStore = combineReducers({
   userData: showingAppsReducer
 });
 
-const store = createStore(combinedStore, applyMiddleware(ReduxThunk));
+const store = createStore(combinedStore, applyMiddleware(thunk, reduxPackMiddleware, logger));
 
 console.log(store.getState());
 

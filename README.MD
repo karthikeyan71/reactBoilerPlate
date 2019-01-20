@@ -5,4 +5,4 @@
 5. installing redux-pack and redux-thunk redux react-redux
 6. installing prop-types
 7. adding the redux thunk applyMiddleware
-7. installing redux-logger
+8. installing redux-logger
