@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open --mode development",
-    "dev": "webpack"
+    "dev": "webpack-dashboard -- webpack-dev-server --open --mode development"
   },
   "author": "Karthikeyan",
   "license": "ISC",
